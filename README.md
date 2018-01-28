@@ -71,11 +71,17 @@ React-radio-lab is a react component library for node. It can be used with [redu
 ## Styling the Radio Buttons
 
 By default, the radio buttons are composed of an inner and outer circle using [svg circle elements](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle). You can override the default styles of each *RadioButton* by passing in an object to the *style* prop.
+
 The following properties can be modified by the style prop:
+
 *innerCircle* - changes the styling of the inner circle.
+
 *outerCircle* - changes the styling of the outer circle.
+
 *label* - changes the styling of the label
-*container* - modify the div wrapping the label and the svg.
+
+*container* - modify the div wrapping the label and the svg
+
 
 ```javascript
   <RadioLab onChange={this.onChange} init={false}>
