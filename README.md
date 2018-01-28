@@ -2,6 +2,7 @@
 
 React-radio-lab is a react component library for node. It can be used with [redux-form](https://redux-form.com/7.2.1/) and can be readily modified and stylized. You can you the stylize the default circle buttons, or add your own html tags. 
 
+![alt text](https://github.com/davidychow87/react-radio-lab/blob/withPics/radio-lab-simple.JPG)
 
 ## Table of Contents
 * [Installation](#installation)
