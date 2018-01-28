@@ -28,7 +28,11 @@ React-radio-lab is a react component library for node. It can be used with [redu
 ## Getting Started
 
   ### Wrap the *RadioButton* child components with the *RadioLab* component
-  Required props for *RadioLab*: onChange
+  
+  *RadioButton* - Each *RadioButton* should have a unique *value* (number, string or boolean) by which it can be identified. You can also pass in a label (i.e. 'Button One').
+  
+  *RadioLab* - Pass an onChange function as a prop, to handle changes when buttons are selected. The onChange function will receive the *value* of the *RadioButton* selected. The *init* prop indicated which *RadioButton* should be selected by default, and should be the *value* of the desired *RadioButton*.
+  
   Required props for *RadioButton*: value
   ```javascript
   
@@ -38,7 +42,7 @@ React-radio-lab is a react component library for node. It can be used with [redu
   
   render() {
     return (
-      <RadioLab onChange={this.onChange}>
+      <RadioLab onChange={this.onChange} init={"one"}>
         <RadioButton value={"one"}>Button One</RadioButton>
         <RadioButton value={"two"}>Button Two</RadioButton>
       </RadioLab>
