@@ -14,8 +14,38 @@ React-radio-lab is a react component library for node. It can be used with [redu
 <a name="installation"></a>
 ## Installation
 
+  ### Install using npm:
+  ```javascript
+  npm install react-radio-lab
+  ```
+
+  ### Import the *RadioLab* and *RadioButton* components to your react file:
+  ```javascript
+  import { RadioLab, RadioButton } from 'react-radio-lab';
+  ```
+ 
 <a name="getting-started"></a> 
 ## Getting Started
+
+  ### Wrap the *RadioButton* child components with the *RadioLab* component
+  Required props for *RadioLab*: onChange
+  Required props for *RadioButton*: value
+  ```javascript
+  
+  onChange(value) {
+    this.setState({selectedValue: value});
+  }
+  
+  render() {
+    return (
+      <RadioLab onChange={onChange}>
+        <RadioButton value={"Button One"}>First Button</RadioButton>
+        <RadioButton value={"Button One"}>First Button</RadioButton>
+        <RadioButton value={"Button One"}>First Button</RadioButton>
+      </RadioLab>
+    );
+  }
+  ```
 
 <a name="styling"></a>
 ## Styling the Radio Buttons
