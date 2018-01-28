@@ -1,8 +1,7 @@
 # react-radio-lab
 
-React-radio-lab is a react component library for node. It can be used with [redux-form](https://redux-form.com/7.2.1/) and can be readily modified and stylized. You can you the stylize the default circle buttons, or add your own html tags. 
+React-radio-lab is a react component library for node. It can be used with [redux-form](https://redux-form.com/7.2.1/) and can be readily modified and stylized. You can you the stylize the default circle buttons, or create your own buttons from html. 
 
-You can style your buttons however you like:
 ![alt text](https://github.com/davidychow87/react-radio-lab/blob/withPics/multicolor.png)
 
 ## Table of Contents
@@ -11,7 +10,6 @@ You can style your buttons however you like:
 * [Styling the Radio Buttons](#styling)
 * [Creating Unique Buttons](#unique)
 * [Use with Redux-Form](#redux-form)
-
 
 <a name="installation"></a>
 ## Installation
@@ -41,13 +39,16 @@ You can style your buttons however you like:
   render() {
     return (
       <RadioLab onChange={this.onChange}>
-        <RadioButton value={"Button One"}>First Button</RadioButton>
-        <RadioButton value={"Button One"}>First Button</RadioButton>
-        <RadioButton value={"Button One"}>First Button</RadioButton>
+        <RadioButton value={"one"}>Button One</RadioButton>
+        <RadioButton value={"two"}>Button Two</RadioButton>
       </RadioLab>
     );
   }
   ```
+  
+  The default (unstyled) buttons look like this:
+  
+  ![alt text](https://github.com/davidychow87/react-radio-lab/blob/withPics/default.JPG)
 
 <a name="styling"></a>
 ## Styling the Radio Buttons
