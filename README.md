@@ -33,7 +33,6 @@ React-radio-lab is a react component library for node. It can be used with [redu
   
   *RadioLab* - Pass an onChange function as a prop, to handle changes when buttons are selected. The onChange function will receive the *value* of the *RadioButton* selected. The *init* prop indicated which *RadioButton* should be selected by default, and should be the *value* of the desired *RadioButton*.
   
-  Required props for *RadioButton*: value
   ```javascript
   
   onChange(value) {
@@ -53,6 +52,18 @@ React-radio-lab is a react component library for node. It can be used with [redu
   The default (unstyled) buttons look like this:
   
   ![alt text](https://github.com/davidychow87/react-radio-lab/blob/withPics/default.JPG)
+  
+  ### RadioLab Props
+  | prop          | type          | required | notes
+  | ------------- |---------------| ---------|---------
+  | onChange      | function      | yes       | callback for when RadioButton is selected; receives the value of the selected RadioButton
+  | init          | string, boolean, number | no       | init should be the *value* of the RadioButton to be selected by default. Note, do not pass an init if using with redux-form ([see below](#redux-form))
+  
+  ### RadioButton Props
+  | prop          | type          | required | Notes
+  | ------------- |---------------| ---------|---------
+  | value         | string, boolean, number | yes       | the value identifies the RadioButton and should be unique
+  | style         | object        | no    | change the style of the RadioButton, see [styling](#styling), [creating unique buttons](#unique), below.
 
 <a name="styling"></a>
 ## Styling the Radio Buttons
