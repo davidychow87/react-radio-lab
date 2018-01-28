@@ -71,19 +71,26 @@ React-radio-lab is a react component library for node. It can be used with [redu
 ## Styling the Radio Buttons
 
 By default, the radio buttons are composed of an inner and outer circle using [svg circle elements](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle). You can override the default styles of each *RadioButton* by passing in an object to the *style* prop.
+The following properties can be modified by the style prop:
+*innerCircle* - changes the styling of the inner circle.
+*outerCircle* - changes the styling of the outer circle.
+*label* - changes the styling of the label
+*container* - modify the div wrapping the label and the svg.
 
 ```javascript
   <RadioLab onChange={this.onChange} init={false}>
     <div style={styles.inline}>
-      <RadioButton value={true} style={styles.button}>True</RadioButton>
+      <RadioButton value={true} style={styles.button}>
+        <span><i>True</i></span>
+      </RadioButton>
     </div>
     <div style={styles.inline}>
-      <RadioButton value={false} style={styles.button}>False</RadioButton>
+      <RadioButton value={false} style={styles.button}>
+        <span><i>False></i></span>
+      </RadioButton>
     </div>
   </RadioLab>
-  
   ....
-  
   const styles = {
     inline: {
       display: "inline-block",
@@ -113,24 +120,46 @@ By default, the radio buttons are composed of an inner and outer circle using [s
   }
 ```
 
+The above code results in the styling shown below.  
+
 ![alt text](https://github.com/davidychow87/react-radio-lab/blob/withPics/styles-buttons.PNG)
 
-Below are summaries of the different properties for innerCircle, outerCircle, Note that you may pass in other properties than those listed.
+Below are summaries of the different properties for innerCircle, outerCircle, Note that you may pass in other properties than those listed below.
 ### innerCircle Properties
 | Key           | Property      | Default  | Notes
 | ------------- |---------------| ---------|---------
-| r             | circle radius | 10       | Inner radius should be less than outer radius, should be a number
-| fill          | fill color    |          | 
-| stroke        | stroke color  |    $1 |
-| strokeWidth   | stroke width  |    $1 |
+| r             | circle radius | 5      | Inner radius should be less than outer radius, should be a number
+| fill          | fill color    | '#888'     | 
+| stroke        | stroke color  | '#888'  | 
+| strokeWidth   | stroke width  |  0    |
 
-### outerCircleProperties
+### outerCircle Properties
 | Key           | Property      | Default  | Notes
 | ------------- |---------------| ---------|---------
-| r             | circle radius | 10       | Inner radius should be less than outer radius, should be a number
-| fill          | fill color    |          | 
-| stroke        | stroke color  |    $1 |
-| strokeWidth   | stroke width  |    $1 |
+| r             | circle radius | 8      | Inner radius should be less than outer radius, should be a number
+| fill          | fill color    | '#F4F6FA'     | 
+| stroke        | stroke color  | '#888'  | 
+| strokeWidth   | stroke width  | 2.5   |
+
+### label Properties
+| Key           | Property      | Default  | Notes
+| ------------- |---------------| ---------|---------
+| color          | label color | '#5f6062'     | 
+| fontSize        | font size    | 14  | 
+| fontFamily        | font  | 'arial'  | 
+| position   | position  | 'relative'   |
+| bottom   | distance from bottom of container div | 5 |
+|left    | left distance  |  5  |
+
+### container Properties
+| Key           | Property      | Default  | Notes
+| ------------- |---------------| ---------|---------
+| float         | float | 'left'     | 
+| width       | width    | '100%'  | 
+| height        | height  | '100%'  | 
+| paddingTop   | top padding  | 10   |
+| cursor  | mouseover pointer | 'pointer' |
+
 
 <a name="unique"></a>
 ## Creating unique buttons
