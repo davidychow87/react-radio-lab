@@ -64,6 +64,8 @@ React-radio-lab is a react component library for node. It can be used with [redu
   | ------------- |---------------| ---------|---------
   | value         | string, boolean, number | yes       | the value identifies the RadioButton and should be unique
   | style         | object        | no    | change the style of the RadioButton, see [styling](#styling), [creating unique buttons](#unique), below.
+  | on            | function      | no    | Optional. Used to pass create your own [unique](#unique) ON (selected) button.
+  | off           | function      | no    | Optional. Used to pass create your own [unique](#unique) OFF (not selected) button.
 
 <a name="styling"></a>
 ## Styling the Radio Buttons
@@ -71,37 +73,47 @@ React-radio-lab is a react component library for node. It can be used with [redu
 By default, the radio buttons are composed of an inner and outer circle using [svg circle elements](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle). You can override the default styles of each *RadioButton* by passing in an object to the *style* prop.
 
 ```javascript
-  <RadioLab onChange={this.onChange}>
-    <RadioButton value={true} style={styles}>True</RadioButton>
-    <RadioButton value={false} style={styles}>False</RadioButton>
+  <RadioLab onChange={this.onChange} init={false}>
+    <div style={styles.inline}>
+      <RadioButton value={true} style={styles.button}>True</RadioButton>
+    </div>
+    <div style={styles.inline}>
+      <RadioButton value={false} style={styles.button}>False</RadioButton>
+    </div>
   </RadioLab>
   
   ....
   
   const styles = {
-    //override inner circle style
-    innerCircle: {
-      r: 10
+    inline: {
+      display: "inline-block",
+      margin: '5px',
+      padding: '10px',
+      border: '2px dashed green',
+      width: '100px'
     },
-    //override outer circle style
-    outerCircle: {
-      fill: '#',
-      stroke: '#'
+    button: {
+      innerCircle: {
+        r: 7,
+        fill: '#FFC300',
+      },
+      outerCircle: {
+        r: 11,
+        stroke: '#FFC300',
+      },
+      label: {
+        color: '#FFC300',
+        bottom: 4,
+        fontSize: 22
+      },
+      container: {
+        border: '2px dashed #FFC300'
+      },
     },
-    //override the label properties
-    label: {
-      fontColor: ''
-    },
-    //style the container that wraps the label and button svg element
-    container: {
-      
-    }
-    //style the wrapper that wraps the container
-    wrapper: {
-    
-    }
   }
 ```
+
+![alt text](https://github.com/davidychow87/react-radio-lab/blob/withPics/styles-buttons.PNG)
 
 Below are summaries of the different properties for innerCircle, outerCircle, Note that you may pass in other properties than those listed.
 ### innerCircle Properties
