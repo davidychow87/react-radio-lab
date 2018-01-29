@@ -8,7 +8,7 @@ React-radio-lab is a react component library for node. It can be used with [redu
 * [Installation](#installation)
 * [Getting Started](#getting-started)
 * [Styling the Radio Buttons](#styling)
-* [Creating Unique Buttons](#unique)
+* [Creating Unique Custom Buttons](#unique)
 * [Use with Redux-Form](#redux-form)
 
 <a name="installation"></a>
@@ -168,7 +168,121 @@ Below are summaries of the different properties for innerCircle, outerCircle, No
 
 
 <a name="unique"></a>
-## Creating unique buttons
+## Creating Unique Custom Buttons
+
+*RadioButton* accepts two props, *on* and *off*, which can be used to create your own unique buttons. Simply pass in a function returning html tags:
+
+```javascript
+ <RadioLab init={true} onChange={this.onChange.bind(this)}>
+    <RadioButton value={true} on={this.on} off={this.off} style={styles.label}>True</RadioButton>
+    <RadioButton value={false} on={this.on} off={this.off} style={styles.label}> False</RadioButton>
+ </RadioLab>
+
+...
+
+//on and off should be functions like this:
+on() {
+  return (
+    <svg height="15px" width="15px">
+        <rect {...rectOuter} />
+        <rect {...rectInner} />
+    </svg>
+  );
+ }
+
+off() {
+  return (
+    <svg height="15px" width="15px">
+        <rect {...rectOuter} />
+    </svg>
+);
+
+//style the inner rect
+const rectInner = {
+  fill: "orange",
+  x: '3.5',
+  y: '3.5',
+  height: '8',
+  width: '8',
+}
+
+//style the outer rect
+const rectOuter = {
+  x: '0',
+  y: '0',
+  height: '15',
+  width: '15',
+  stroke: '#888',
+  strokeWidth: 4,
+  fill: 'none'
+}
+```
+
+The above code results in this:
+
+![alt text](https://github.com/davidychow87/react-radio-lab/blob/withPics/buttons-square.PNG)
+
+Or pass in a react component:
+
+```javascript
+const CustomButton = ({ label, styles }) => {
+  return (
+    <div style={styles.div}>
+      <span style={styles.span}>{label}</span>
+    </div>
+  );
+}
+...
+
+//function returning ON button
+on() {
+    return (
+      <CustomButton label="ON" styles={{div: styles.on, span: styles.span }}/>
+    );
+};
+
+//function returning OFF button
+off() {
+    return (
+      <CustomButton label="ON" styles={{div: styles.off, span: styles.span }}/>
+    );
+};
+
+//styling
+const styles = {
+  on: {
+    border: '2px solid blue',
+    background: 'orange',
+    height: '30px',
+    width: '50px',
+    textAlign: 'center'
+  },
+
+  off: {
+    border: '2px solid blue',
+    height: '30px',
+    width: '50px',
+    textAlign: 'center'
+  },
+
+
+  span: {
+    display: 'inline-block',
+    paddingTop: '5px'
+  },
+}
+
+...
+<RadioLab init={true} onChange={this.onChange.bind(this)}>
+  <RadioButton value={true} on={this.on} off={this.off}></RadioButton>
+  <RadioButton value={false} on={this.on} off={this.off}></RadioButton>
+</RadioLab>
+```
+
+Which results in:
+
+![alt text](https://github.com/davidychow87/react-radio-lab/blob/withPics/custom-on-off.PNG)
+
 
 <a name="redux-form"></a>
 ## Use with Redux-Form
