@@ -293,6 +293,34 @@ Which results in:
 <a name="redux-form"></a>
 ## Use with Redux-Form
 
+Add a functional *component* prop to the [*Field*](https://redux-form.com/6.7.0/docs/api/field.md/) component in redux-form. This function should accept the *props* passed down by *Field* and pass it on to *RadioLab*. Note that no *onChange* or *init* props is necessary for *RadioLab* (though you will have to initialize the value using redux-form.
+
+```javascript
+<Field
+  name="RadioButtonsField"
+  component={(props) => {
+    return (
+      <div style={{maxWidth: '90em'}}>
+        <RadioLab {...props} >
+          <Row>
+            <Col xs={6}>
+                <RadioButton value={false}>
+                  <span>False</span>
+                </RadioButton>
+            </Col>
+            <Col xs={6}>
+              <RadioButton value={true}>
+                <span>True</span>
+              </RadioButton>
+            </Col>
+          </Row>
+        </RadioLab>
+      </div>
+    );
+  }}
+/>
+```
+
 
 
 
