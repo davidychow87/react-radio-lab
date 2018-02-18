@@ -15,6 +15,16 @@
     "type": "git",
     "url": "git+https://github.com/davidychow87/react-radio-lab.git"
   },
+  "keywords": [
+    "react",
+    "radio",
+    "radio-group",
+    "react-component",
+    "radio-button",
+    "redux-form",
+    "customization",
+    "svg"
+  ],
   "author": "David <davidychow87@gmail.com> (https://github.com/davidychow87)",
   "license": "ISC",
   "bugs": {
