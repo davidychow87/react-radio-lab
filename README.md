@@ -16,7 +16,13 @@ React-radio-lab is a react component library for node. It can be used with [redu
 
   ### Install using npm:
   ```javascript
-  npm install react-radio-lab
+  npm install --save react-radio-lab
+  ```
+  
+  ### Dependencies
+  You'll need [Radium](https://github.com/formidablelabs/radium) and [lodash](https://lodash.com/) installed in your app if you don't have them already:
+  ```
+  npm install --save radium lodash
   ```
 
   ### Import the *RadioLab* and *RadioButton* components to your react file:
