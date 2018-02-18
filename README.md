@@ -293,7 +293,7 @@ Which results in:
 <a name="redux-form"></a>
 ## Use with Redux-Form
 
-Add a function to the [Field](https://redux-form.com/6.7.0/docs/api/field.md/) in redux-form:
+Add a functional *component* prop to the [*Field*](https://redux-form.com/6.7.0/docs/api/field.md/) component in redux-form. This function should accept the *props* passed down by *Field* pass it on to *RadioLab*. Note that no *onChange* or *init* props is necessary for *RadioLab* (though you will have to initialize the value using redux-form.
 
 ```javascript
 <Field
@@ -318,7 +318,6 @@ Add a function to the [Field](https://redux-form.com/6.7.0/docs/api/field.md/) i
       </div>
     );
   }}
-  disabled={false}
 />
 ```
 
