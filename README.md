@@ -293,6 +293,35 @@ Which results in:
 <a name="redux-form"></a>
 ## Use with Redux-Form
 
+Add a function to the Field in redux-form:
+
+```javascript
+<Field
+  name="RadioButtonsField"
+  component={(props) => {
+    return (
+      <div style={{maxWidth: '90em'}}>
+        <RadioLab {...props} >
+          <Row>
+            <Col xs={6}>
+                <RadioButton value={false}>
+                  <span>False</span>
+                </RadioButton>
+            </Col>
+            <Col xs={6}>
+              <RadioButton value={true}>
+                <span>True</span>
+              </RadioButton>
+            </Col>
+          </Row>
+        </RadioLab>
+      </div>
+    );
+  }}
+  disabled={false}
+  />
+```
+
 
 
 
