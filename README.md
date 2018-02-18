@@ -293,7 +293,7 @@ Which results in:
 <a name="redux-form"></a>
 ## Use with Redux-Form
 
-Add a function to the Field in redux-form:
+Add a function to the [Field](https://redux-form.com/6.7.0/docs/api/field.md/) in redux-form:
 
 ```javascript
 <Field
@@ -319,7 +319,7 @@ Add a function to the Field in redux-form:
     );
   }}
   disabled={false}
-  />
+/>
 ```
 
 
